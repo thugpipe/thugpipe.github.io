@@ -1,0 +1,261 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Clearfix */
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* i really start here */
+body{
+  background-color: black;
+  background: url("images/art-deco-wallpaper-picture-JKNA.jpg");
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+.main{
+  border:5px solid black;
+  border-radius: 10px;
+  background-color: #876e39;
+  background-image: url("images/537_noveau_frame_18.png");
+  background-size: 100% 100%;
+  width: 700px;
+  margin: 25px auto;
+  overflow: hidden;
+
+}
+/*.header{
+  height: 120px;
+  text-align: center;
+  font-family: 'Fascinate Inline', sans-serif;
+  font-size: 30pt;
+}*/
+
+.player, .computer{
+  height: 230px;
+  text-align: center;
+}
+
+.controls, .header{
+  margin: 0% auto;
+  height: 100px;
+  text-align: center;
+}
+
+.big_btn{
+  display: block;
+  width: 400px;
+  margin: auto;
+  background-color: grey;
+  border-top-left-radius: 15px;
+  border-left:10px double black;
+  border-top:10px double black;
+  border-right:10px solid black;
+  border-bottom:10px solid black;
+  font-family: 'Limelight', sans-serif;
+  font-size: 35pt;
+  text-align: center;
+  line-height: 1em;
+}
+
+.btn{
+  display: none;
+  min-width: 30%;
+  background-color: grey;
+  border-top-left-radius: 15px;
+  border-left:10px double black;
+  border-top:10px double black;
+  border-right:10px solid black;
+  border-bottom:10px solid black;
+  font-family: 'Limelight', sans-serif;
+  font-size: 40pt;
+  text-align: center;
+  line-height: 1em;
+}
+/*.btn div{
+  border: 1px solid black;
+  width: (100% - 20px);
+  height:(100% - 20px);
+  margin:10px 10px 10px 10px;
+}*/
+
+.card, .tempCard{
+  height: 210px;
+  width: 145px;
+  margin: 7px;
+  padding: 7px;
+  color: black;
+  font-size: 21pt;
+  font-family: 'Limelight', sans-serif;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*border: 1px solid;*/
+  border-radius: 7px;
+  box-shadow: -3px 0px 4px #333;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  background-size: 40%;
+
+}
+
+.tempCard {
+  background-image: url("images/card_back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.card > div{
+  width:125px;
+  height: 160px;
+  border-left: 1px solid ;
+  border-bottom: 1px solid ;
+  left: 12px;
+  position: absolute;
+  margin-right: 0px
+  box-shadow: none;
+}
+.card > div > div{
+  width:110px;
+  height: 165px;
+  border-left: 2px solid ;
+  border-bottom: 2px solid ;
+  margin-left: 5px;
+  margin-right: 0px
+}
+
+/*.tempCard{
+  height: 224px;
+  width: 159px;
+  margin: 7px;
+  background-color: white;
+  background-image: url("card_back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  border-radius: 7px;
+  box-shadow: -3px 0px 4px #333;
+}*/
+
+/*.card p{
+  color: black;
+  font-size: 30pt;
+  margin: 10px;
+}*/
+
+.onTop{
+  margin-left: -100px;
+}
+
+.clubs{
+  background-image: url("images/Suits/Club.png");
+  color: black;
+}
+
+.hearts{
+  background-image: url("images/Suits/Heart.png");
+  color: #CA3C36;
+}
+
+.spades{
+  background-image: url("images/Suits/Spade.png");
+  color: black;
+}
+
+.diamonds{
+  background-image: url("images/Suits/Diamond.png");
+  color: #CA3C36;
+}
+
+.overlay{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50%);
+
+}
+
+.background{
+  display: none;
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.status{
+  width: 400px;
+  height: 400px;
+  padding: 50px;
+  color: black;
+  font-size: 21pt;
+  font-family: 'Limelight', sans-serif;
+  background-image: url("images/527_nouveau_frame_14.png");
+  background-color: rgba(255,255,255,0.75);
+  background-size: 100% 100%;
+  border: 1px solid black;
+}
