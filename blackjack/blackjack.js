@@ -39,12 +39,12 @@ var endGame = function(){
 
 var displayCard = function( player, tempCard){
 
-	if ( tempCard ) {
+	if ( tempCard ) {      //Adds the temp card
 		var tempCard = $('<div>');
 		tempCard.addClass('tempCard onTop').appendTo(dealerDisplay);
 		return;
 	}
-	if(player === computerHand && player.length > 3){
+	if(player === computerHand && player.length > 3){ //allows the computer hand to desplay one at a time with a delay
 
 		var card = player[ $('.computer .card').length + 1 ];
 
@@ -56,7 +56,7 @@ var displayCard = function( player, tempCard){
 
 	var cardSuit = Math.floor(card / 13);
 
-	if(card % 13 === 11){ 
+	if(card % 13 === 11){ //assigns letter to face cards
 
 		card = "Q";
 
@@ -95,7 +95,7 @@ var displayCard = function( player, tempCard){
 
 	line1.appendTo(tempCard);
 
-	if(player === playerHand){
+	if(player === playerHand){ //identifies the player to append the card to
 
 		tempCard.appendTo(playerDisplay);
 
@@ -110,7 +110,7 @@ var displayCard = function( player, tempCard){
 var drawCard = function(player){
 	var card = deck.pop();
 	player.push(card);
-	if(card % 13 === 0){
+	if(card % 13 === 0){ //adds 1 to the ace count in the Hand arrays
 		player[0] ++;
 	}
 	return;
@@ -121,22 +121,22 @@ var scoreHand = function(player){
 	dealerAcesUsed = 0;
 	player.forEach(function(crd, posi){
 		if(posi > 0){
-			if(crd % 13 === 11 || crd % 13 === 12 || crd %13 === 1){ 
+			if(crd % 13 === 11 || crd % 13 === 12 || crd %13 === 1){ // scores face cards
 				score += 10;
-			}else if(crd % 13 === 0){ 
+			}else if(crd % 13 === 0){ //scores aces
 				score += 11;
 			}else{ 
-				score += crd % 13;
+				score += crd % 13; //scores number cards
 			};
 		};
 	})
-	
-	if(score > 21 && player[0] > 0){
+
+	if(score > 21 && player[0] > 0){ // this factors for the aces by subtracting 10 for available aces
 		for(var i = 0; i < player[0]; i++){
 			score -= 10;
 			if(score <= 21){ 
 				//i = player[0];
-				dealerAcesUsed = i + 1;
+				dealerAcesUsed = i + 1; // this variable is use in finding a soft 17 function in the dealer move function
 				break;
 			}
 		}
@@ -147,40 +147,40 @@ var scoreHand = function(player){
 
 var isItNatural = function(player){
 
-	if(player[0] === 1 && player.length === 3){
+	if(player[0] === 1 && player.length === 3){ // This is used to determine if a had scoring 21 is a blackjack or natural 21
 		return true;
 	}
 	return false;
 }
 
 var playTheGame = function(){
-	$('.card').remove();
+	$('.card').remove(); //removes any cards left on the table from a previous round
 	deal();
-	endOverlay.css('display', 'none')
-	$(".main .big_btn").hide();
-	smallBtns.css("display", "inline-block");
+	endOverlay.css('display', 'none') // hides the game end overlay
+	$(".main .big_btn").hide();       // hides play button
+	smallBtns.css("display", "inline-block"); //shows player controls
 	
-	for ( var i = 0; i < 4; i++ ) {
+	for ( var i = 0; i < 4; i++ ) { //this draws two cards for the player and 3 cards for the dealer
 		if ( i % 2 === 0 ){
 			drawCard(playerHand);
 			displayCard(playerHand)
 		} else {
 			drawCard(computerHand);
-			displayCard(computerHand, i === 3 )
+			displayCard(computerHand, i === 3 ) //this tells the display card function to append a temp place holder card to the computers hand
 		}
 	}
 }
 
-var dealerReveal = function(){
+var dealerReveal = function(){ //this shows the dealers hidden card
 	$('.tempCard').remove();
 	displayCard(computerHand);
 	return;
 }
 
-var playersTurn = function(){
+var playersTurn = function(){ //draws a card for the player
 	drawCard(playerHand);
 	displayCard(playerHand);
-	if(scoreHand(playerHand) > 21){
+	if(scoreHand(playerHand) > 21){// this checks if you bust and hides the buttons if you do
 		smallBtns.hide();
 		setTimeout(function(){
 			dealerReveal();
