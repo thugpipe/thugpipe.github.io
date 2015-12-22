@@ -14,3 +14,8 @@ Once the cards are dealt you can choose to hit or stay, however if your score ex
 
 If you stay the dealer will then draw cards until his score is greater than or equal to 17.  If the dealer has Blackjack (Ace + 10) with his two cards, he won't take any more cards. You lose, except if you also have a Blackjack, in which case it is a push.  If the dealer doesn't have a blackjack, he hits (takes more cards) or stands depending on the value of the hand. Contrary to the player, though, the dealer's action is completely dictated by the rules. The dealer must hit if the value of the hand is lower than 17, otherwise the dealer will stand.  The dealer must also hit on a soft 17 (a hand of 17 containing an ace being counted as 11).
 
+images used from:
+tigers-stock.deviantart.com
+clipartbest.com
+aniscarwallpaper.blogspot.com
+badpete69 on http://www.playingcardforum.com/index.php?topic=6706.0
